@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<SaveMod20XXSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BasicAugments>
+    <Item Name="PowerEnhancer" HexValue="0x10000000000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x20000000000000000000" Unlocked="false" />
+    <Item Name="HeartContainer" HexValue="0x40000000000000000000" Unlocked="true" />
+    <Item Name="BlueLander" HexValue="0x80000000000000000000" Unlocked="true" />
+    <Item Name="PlumberHat" HexValue="0x01000000000000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x02000000000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x04000000000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x08000000000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00100000000000000000" Unlocked="false" />
+    <Item Name="ForcemetalShell" HexValue="0x00200000000000000000" Unlocked="true" />
+    <Item Name="XCalibur" HexValue="0x00400000000000000000" Unlocked="true" />
+    <Item Name="GlassCannon" HexValue="0x00800000000000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00010000000000000000" Unlocked="false" />
+    <Item Name="BrainFoodLunch" HexValue="0x00020000000000000000" Unlocked="true" />
+    <Item Name="Zephyr" HexValue="0x00040000000000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00080000000000000000" Unlocked="false" />
+    <Item Name="ScrapmetalScavenger" HexValue="0x00001000000000000000" Unlocked="true" />
+    <Item Name="SevenLeafClover" HexValue="0x00002000000000000000" Unlocked="true" />
+    <Item Name="SpilloverMatrix" HexValue="0x00004000000000000000" Unlocked="false" />
+    <Item Name="HealthNut" HexValue="0x00008000000000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00000100000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00000200000000000000" Unlocked="false" />
+    <Item Name="VitalityScavenger" HexValue="0x00000400000000000000" Unlocked="true" />
+    <Item Name="EnergyScavenger" HexValue="0x00000800000000000000" Unlocked="false" />
+    <Item Name="NutReplicator" HexValue="0x00000010000000000000" Unlocked="true" />
+    <Item Name="MinimechOGrinder" HexValue="0x00000020000000000000" Unlocked="true" />
+    <Item Name="Murderdrone" HexValue="0x00000040000000000000" Unlocked="true" />
+    <Item Name="SkitterySmuggler" HexValue="0x00000080000000000000" Unlocked="true" />
+    <Item Name="ChargedNuts" HexValue="0x00000001000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00000002000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00000004000000000000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00000008000000000000" Unlocked="false" />
+    <Item Name="Gapminder" HexValue="0x00000000100000000000" Unlocked="true" />
+    <Item Name="TheRebeginner" HexValue="0x00000000200000000000" Unlocked="true" />
+    <Item Name="ShockwaveSidekick" HexValue="0x00000000400000000000" Unlocked="true" />
+    <Item Name="Vendsmasher" HexValue="0x00000000800000000000" Unlocked="true" />
+    <Item Name="ShinierToken" HexValue="0x00000000010000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00000000020000000000" Unlocked="false" />
+    <Item Name="ReFlapp" HexValue="0x00000000040000000000" Unlocked="true" />
+    <Item Name="TinyFlamespewer" HexValue="0x00000000080000000000" Unlocked="true" />
+    <Item Name="ArmorativePlating" HexValue="0x00000000001000000000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00000000002000000000" Unlocked="false" />
+    <Item Name="ThriftActuator" HexValue="0x00000000004000000000" Unlocked="true" />
+    <Item Name="CrisisOverdrive" HexValue="0x00000000008000000000" Unlocked="false" />
+    <Item Name="NutsavingStringwire" HexValue="0x00000000000100000000" Unlocked="true" />
+    <Item Name="ArmorNut" HexValue="0x00000000000200000000" Unlocked="true" />
+    <Item Name="RegenerativePlating" HexValue="0x00000000000400000000" Unlocked="true" />
+    <Item Name="EnerativePlating" HexValue="0x00000000000800000000" Unlocked="false" />
+    <Item Name="ArmorBloom" HexValue="0x00000000000010000000" Unlocked="true" />
+    <Item Name="Meganut" HexValue="0x00000000000020000000" Unlocked="true" />
+    <Item Name="PureFlame" HexValue="0x00000000000040000000" Unlocked="false" />
+    <Item Name="ForgottenMemento" HexValue="0x00000000000080000000" Unlocked="true" />
+    <Item Name="CrisisTimestopper" HexValue="0x00000000000001000000" Unlocked="false" />
+    <Item Name="SystemRestore" HexValue="0x00000000000002000000" Unlocked="false" />
+    <Item Name="ArmorSpreader" HexValue="0x00000000000004000000" Unlocked="true" />
+    <Item Name="Choicebooster" HexValue="0x00000000000008000000" Unlocked="true" />
+    <Item Name="Vibroreserve" HexValue="0x00000000000000100000" Unlocked="false" />
+    <Item Name="Unknown" HexValue="0x00000000000000200000" Unlocked="false" />
+    <Item Name="ArmorScavenger" HexValue="0x00000000000000400000" Unlocked="true" />
+    <Item Name="EntropyLock" HexValue="0x00000000000000800000" Unlocked="true" />
+    <Item Name="BracerofBattle" HexValue="0x00000000000000010000" Unlocked="true" />
+    <Item Name="Hypersash" HexValue="0x00000000000000020000" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00000000000000040000" Unlocked="false" />
+    <Item Name="Megaheart" HexValue="0x00000000000000080000" Unlocked="true" />
+    <Item Name="TheVolunteer" HexValue="0x00000000000000001000" Unlocked="false" />
+    <Item Name="Thrillseeker" HexValue="0x00000000000000002000" Unlocked="false" />
+    <Item Name="QuantumSpook" HexValue="0x00000000000000004000" Unlocked="true" />
+    <Item Name="HoardersMight" HexValue="0x00000000000000008000" Unlocked="true" />
+    <Item Name="StrikingFeather" HexValue="0x00000000000000000100" Unlocked="false" />
+    <Item Name="ThunderousBoon" HexValue="0x00000000000000000200" Unlocked="false" />
+    <Item Name="BandofMight" HexValue="0x00000000000000000400" Unlocked="true" />
+    <Item Name="MistimedProtector" HexValue="0x00000000000000000800" Unlocked="true" />
+    <Item Name="WorldSlug" HexValue="0x00000000000000000010" Unlocked="false" />
+    <Item Name="LeafmetalPlating" HexValue="0x00000000000000000020" Unlocked="false" />
+    <Item Name="ZookeepersSigil" HexValue="0x00000000000000000040" Unlocked="true" />
+    <Item Name="Unknown" HexValue="0x00000000000000000080" Unlocked="false" />
+    <Item Name="ContractorPlus" HexValue="0x00000000000000000001" Unlocked="true" />
+    <Item Name="ContractorOmega" HexValue="0x00000000000000000002" Unlocked="true" />
+    <Item Name="MixmatchMastery" HexValue="0x00000000000000000004" Unlocked="true" />
+    <Item Name="ChargingMagnet" HexValue="0x00000000000000000008" Unlocked="true" />
+  </BasicAugments>
+  <PrimaryWeapons>
+    <Item Name="WaveBeam" HexValue="0x1000" Unlocked="false" />
+    <Item Name="Scatterblast" HexValue="0x2000" Unlocked="false" />
+    <Item Name="NBuster" HexValue="0x0200" Unlocked="true" />
+    <Item Name="StarBeam" HexValue="0x0400" Unlocked="true" />
+    <Item Name="TheForkalator" HexValue="0x0800" Unlocked="true" />
+    <Item Name="SpinningGlaive" HexValue="0x0010" Unlocked="true" />
+    <Item Name="SharpSharpSpear" HexValue="0x0020" Unlocked="true" />
+    <Item Name="ASaber" HexValue="0x0002" Unlocked="true" />
+    <Item Name="RipplingAxe" HexValue="0x0004" Unlocked="true" />
+    <Item Name="PlasmaBlender" HexValue="0x0008" Unlocked="false" />
+  </PrimaryWeapons>
+  <CoreAugs>
+    <Item Name="ArmatortsShell" HexValue="0x100000" Unlocked="true" />
+    <Item Name="OxjacksGuile" HexValue="0x300000" Unlocked="true" />
+    <Item Name="DracopentsPride" HexValue="0x400000" Unlocked="true" />
+    <Item Name="OwlhawksReign" HexValue="0x800000" Unlocked="true" />
+    <Item Name="ArmatortsMomentum" HexValue="0x001000" Unlocked="true" />
+    <Item Name="OxjacksBlitz" HexValue="0x002000" Unlocked="true" />
+    <Item Name="DracopentsBound" HexValue="0x004000" Unlocked="true" />
+    <Item Name="OwlhawksFeather" HexValue="0x008000" Unlocked="true" />
+    <Item Name="ArmatortsDome" HexValue="0x000100" Unlocked="true" />
+    <Item Name="OxjacksKen" HexValue="0x000200" Unlocked="true" />
+    <Item Name="DracopentsFang" HexValue="0x000400" Unlocked="true" />
+    <Item Name="OwlhawksFocus" HexValue="0x000800" Unlocked="true" />
+    <Item Name="ArmatortsPound" HexValue="0x000001" Unlocked="true" />
+    <Item Name="OxjacksFury" HexValue="0x000002" Unlocked="true" />
+    <Item Name="DracopentsClaw" HexValue="0x000004" Unlocked="true" />
+    <Item Name="OwlhawksTalon" HexValue="0x000008" Unlocked="true" />
+  </CoreAugs>
+  <Prototypes>
+    <Item Name="BrutishAugmentation" HexValue="0x1000" Unlocked="true" />
+    <Item Name="FocusingSagelens" HexValue="0x2000" Unlocked="true" />
+    <Item Name="EarthmetalPlating" HexValue="0x4000" Unlocked="true" />
+    <Item Name="InterestingTimes" HexValue="0x8000" Unlocked="true" />
+    <Item Name="SanityConverter" HexValue="0x0200" Unlocked="true" />
+    <Item Name="ViolenceEnhancer" HexValue="0x0400" Unlocked="true" />
+    <Item Name="DefiantDecree" HexValue="0x0800" Unlocked="true" />
+    <Item Name="UnchargingForce" HexValue="0x0001" Unlocked="true" />
+    <Item Name="FinalShell" HexValue="0x0002" Unlocked="true" />
+    <Item Name="ZookeepersSigil" HexValue="0x0004" Unlocked="true" />
+    <Item Name="ConsumingFury" HexValue="0x0008" Unlocked="true" />
+  </Prototypes>
+  <UnlockByteOffsets BasicAugments="200" PrimaryWeapons="177" CoreAugs="-1" Protoypes="-1" />
+  <DataLoreByteOffsets BasicAugments="276" PrimaryWeapons="253" CoreAugs="298" Protoypes="292" />
+</SaveMod20XXSettings>
