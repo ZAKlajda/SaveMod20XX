@@ -24,13 +24,13 @@ namespace SaveMod20XX
         /// <summary>
         /// This is the location of the documents folder for Windows 7 onwards
         /// </summary>
-        const string SaveGamePath = "%userprofile%\\Documents\\20XX\\";
+        static readonly string SaveGamePath = Environment.ExpandEnvironmentVariables("%userprofile%\\Documents\\20XX");
 
         /// <summary>
         /// This is the legacy (windows XP) document folder location.
         /// In case someone upgraded to 7 from XP or whatever
         /// </summary>
-        const string SaveGamePathLegacy = "%userprofile%\\My Documents\\20XX\\";
+        static readonly string SaveGamePathLegacy = Environment.ExpandEnvironmentVariables("%userprofile%\\My Documents\\20XX");
 
         /// <summary>
         /// This is the file extension for the save game file
@@ -94,6 +94,7 @@ namespace SaveMod20XX
         {
             ErrorState errorState;
             SaveNameAndPathToUse = "";
+            
 
             // If they specified a file, use that one
             if (args.Length >= 1)
