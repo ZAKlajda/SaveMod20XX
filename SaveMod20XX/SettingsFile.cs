@@ -14,7 +14,14 @@ namespace SaveMod20XX
     [XmlRoot("SaveMod20XXSettings")]
     public class Settings
     {
+        /// <summary>
+        /// The file offsets for these sections
+        /// </summary>
         public Offsets UnlockByteOffsets { get; set; } = new Offsets { BasicAugments = 0xC8, PrimaryWeapons = 0xB1, CoreAugs = -1, Protoypes = -1 };
+
+        /// <summary>
+        /// The file offsets for these sections
+        /// </summary>
         public Offsets DataLoreByteOffsets { get; set; } = new Offsets { BasicAugments = 0x114, PrimaryWeapons = 0xFD, CoreAugs = 0x12A, Protoypes = 0x124 };
 
         /// <summary>
@@ -180,8 +187,6 @@ namespace SaveMod20XX
         /// <summary>
         /// Returns a <see cref="BigInteger"/> into a (big-endian) byte[]
         /// </summary>
-        /// <param name="bigInt"></param>
-        /// <returns></returns>
         public static byte[] GetRawBytesFromBigInt(BigInteger bigInt)
         {
             return bigInt.ToByteArray().Reverse().ToArray(); // They always come out in little-endian, which is worthless
@@ -190,8 +195,6 @@ namespace SaveMod20XX
         /// <summary>
         /// Takes a (big-endian) byte[] and turns it into a <see cref="BigInteger"/> to make performing bitwise operations easy
         /// </summary>
-        /// <param name="rawBytes"></param>
-        /// <returns></returns>
         public static BigInteger GetBigIntFromRawBytes(byte[] rawBytes)
         {
             return new BigInteger(rawBytes.Reverse().ToArray()); // It requires them in little-endian, which is ridiculous
