@@ -17,6 +17,9 @@ namespace SaveMod20XX
         public Offsets UnlockByteOffsets { get; set; } = new Offsets { BasicAugments = 0xC8, PrimaryWeapons = 0xB1, CoreAugs = -1, Protoypes = -1 };
         public Offsets DataLoreByteOffsets { get; set; } = new Offsets { BasicAugments = 0x114, PrimaryWeapons = 0xFD, CoreAugs = 0x12A, Protoypes = 0x124 };
 
+        /// <summary>
+        /// Note that these hex values can be arbitrarily long. You're welcome.
+        /// </summary>
         public List<Item> BasicAugments = new List<Item>()
         {
             new Item { Name = "PowerEnhancer"      , HexValue = "0x10000000000000000000", Unlocked = true},
@@ -151,6 +154,12 @@ namespace SaveMod20XX
             new Item { Name = "ConsumingFury"      , HexValue = "0x0008", Unlocked = true },
         };
 
+        /// <summary>
+        /// Takes a hexadecimal string and turns it into a <see cref="BigInteger"/> to make performing bitwise operations easy
+        /// </summary>
+        /// <remarks>
+        /// Not to be confused with "GetBigAssInt(...)"
+        /// </remarks>
         public static BigInteger GetAsBigInt(string hexValue)
         {
             string valToUse = hexValue.ToLower().Trim();
@@ -160,21 +169,37 @@ namespace SaveMod20XX
             return BigInteger.Parse(valToUse, System.Globalization.NumberStyles.AllowHexSpecifier);
         }
 
+        /// <summary>
+        /// Simply returns a <see cref="BigInteger"/> into a hexadecimal string
+        /// </summary>
         public static string GetHexStringFromBigInt(BigInteger bigInt)
         {
             return "0x" + bigInt.ToString("X");
         }
 
+        /// <summary>
+        /// Returns a <see cref="BigInteger"/> into a (big-endian) byte[]
+        /// </summary>
+        /// <param name="bigInt"></param>
+        /// <returns></returns>
         public static byte[] GetRawBytesFromBigInt(BigInteger bigInt)
         {
             return bigInt.ToByteArray().Reverse().ToArray(); // They always come out in little-endian, which is worthless
         }
-
+        
+        /// <summary>
+        /// Takes a (big-endian) byte[] and turns it into a <see cref="BigInteger"/> to make performing bitwise operations easy
+        /// </summary>
+        /// <param name="rawBytes"></param>
+        /// <returns></returns>
         public static BigInteger GetBigIntFromRawBytes(byte[] rawBytes)
         {
             return new BigInteger(rawBytes.Reverse().ToArray()); // It requires them in little-endian, which is ridiculous
         }
 
+        /// <summary>
+        /// Saves this class and it's current settings out to a file
+        /// </summary>
         public void SaveToFile(string FileNameAndPath)
         {
             using (FileStream fs = new FileStream(FileNameAndPath, FileMode.Create, FileAccess.Write))
@@ -185,6 +210,9 @@ namespace SaveMod20XX
             }
         }
 
+        /// <summary>
+        /// Loads this class with settings from a file
+        /// </summary>
         public static Settings LoadFromFile(string FileNameAndPath)
         {
             using (FileStream fs = new FileStream(FileNameAndPath, FileMode.Open, FileAccess.Read))
@@ -216,7 +244,10 @@ namespace SaveMod20XX
     {
         [XmlAttribute]
         public string Name { get; set; }
-
+        
+        /// <summary>
+        /// Note that this hex value can be arbitrarily long. You're welcome.
+        /// </summary>
         [XmlAttribute]
         public string HexValue { get; set; }
 
