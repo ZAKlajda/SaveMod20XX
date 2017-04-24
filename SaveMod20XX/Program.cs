@@ -1,46 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SaveMod20XX
 {
-    class Program
+    partial class Program
     {
-        /// <summary>
-        /// This will be created/stored/loaded from the program execution directory
-        /// </summary>
-        const string SettingsFilePath = "Items20XX.Xml";
+        #region GUI
+        public static Application WinApp { get; private set; }
+        public static SaveModGUI MainWindow { get; private set; }
 
-        /// <summary>
-        /// A unique numeric value will also be appended
-        /// </summary>
-        const string BackupAppend = ".backup";
+        static void RunGui(Settings programSettings, string saveNameAndPathToUse)
+        {
+            WinApp = new Application();
+            MainWindow = new SaveModGUI();
+            foreach (Item item in programSettings.BasicAugments.Concat(programSettings.CoreAugs).Concat(programSettings.PrimaryWeapons).Concat(programSettings.Prototypes))
+            {
+                MainWindow.AllItems.Add(item);
+            }
+            MainWindow.SaveNameAndPathToUse = saveNameAndPathToUse;
+            MainWindow.SettingsFile = programSettings;
+            WinApp.Run(MainWindow); // note: blocking call
+        }
+        
+        #endregion GUI
 
-        /// <summary>
-        /// This is the location of the documents folder for Windows 7 onwards
-        /// </summary>
-        static readonly string SaveGamePath = Environment.ExpandEnvironmentVariables("%userprofile%\\Documents\\20XX");
-
-        /// <summary>
-        /// This is the legacy (windows XP) document folder location.
-        /// In case someone upgraded to 7 from XP or whatever
-        /// </summary>
-        static readonly string SaveGamePathLegacy = Environment.ExpandEnvironmentVariables("%userprofile%\\My Documents\\20XX");
-
-        /// <summary>
-        /// This is the file extension for the save game file
-        /// </summary>
-        const string SaveGameExtension = ".sav";
-
-        /// <summary>
-        /// This is the file name for tha save game file
-        /// </summary>
-        const string SaveFileName = "20xxalphav64" + SaveGameExtension;
 
         /// <summary>
         /// For decoding program return codes
@@ -55,6 +46,11 @@ namespace SaveMod20XX
             NoSaveFileFound = 1,
             BadProgramArgument = 2,
             WrongFileSpecified = 3,
+
+            /// <summary>
+            /// We can't tell if the GUI was error-free (without a lot more work)
+            /// </summary>
+            GuiExit = -1,
         }
 
         /// <summary>
@@ -63,15 +59,10 @@ namespace SaveMod20XX
         /// </summary>
         /// <param name="args">Arg[0], if it exists, should be the savegame file name and path.</param>
         /// <returns>0 for success, anything else for error</returns>
+        [STAThread] // <-- Needed to run GUI elements within Windows
         static int Main(string[] args)
         {
-            if (File.Exists(SettingsFilePath) == false)
-            {
-                Settings defaultSettings = new Settings();
-                defaultSettings.SaveToFile(SettingsFilePath);
-                defaultSettings = null;
-            }
-            Settings programSettings = Settings.LoadFromFile(SettingsFilePath);
+            Settings programSettings = LoadDefaultSettingsFile();
 
             string SaveNameAndPathToUse = "";
             ErrorState saveFoundStatus = LocateSaveGameFile(args, out SaveNameAndPathToUse);
@@ -80,10 +71,34 @@ namespace SaveMod20XX
 
             BackupOriginalSaveFile(SaveNameAndPathToUse);
 
-            ErrorState modificationStatus = PerformSaveModification(SaveNameAndPathToUse, programSettings);
+            if (programSettings.UseGraphicalUserInterface)
+            {
+                RunGui(programSettings, SaveNameAndPathToUse);
+                return (int)ErrorState.GuiExit;
+            }
+            else
+            {
+                ErrorState modificationStatus = PerformSaveModification(SaveNameAndPathToUse, programSettings);
 
-            Console.WriteLine("Program completion code " + modificationStatus);
-            return (int)modificationStatus;
+                Console.WriteLine("Program completion code " + modificationStatus);
+                return (int)modificationStatus;
+            }
+        }
+
+        /// <summary>
+        /// Loads the default settings file, creating one if it cannot be found
+        /// </summary>
+        /// <returns>The settings file</returns>
+        private static Settings LoadDefaultSettingsFile()
+        {
+            if (File.Exists(SettingsFilePath) == false)
+            {
+                Settings defaultSettings = new Settings();
+                defaultSettings.SaveToFile(SettingsFilePath);
+                defaultSettings = null;
+            }
+            Settings programSettings = Settings.LoadFromFile(SettingsFilePath);
+            return programSettings;
         }
 
         /// <summary>
@@ -116,21 +131,16 @@ namespace SaveMod20XX
                     Console.Error.WriteLine("Error: Unexpected first argument. Unable to proceed.");
                     errorState = ErrorState.BadProgramArgument;
                 }
-            } // If the didn't, check the default Windows 7+ directory
+            } // If they didn't, check the MyDocuments default directory
             else if (Directory.Exists(SaveGamePath) && File.Exists(SaveGamePath + "\\" + SaveFileName))
             {
                 SaveNameAndPathToUse = SaveGamePath + "\\" + SaveFileName;
-                errorState = ErrorState.NoError;
-            } // If it's not there, check the Windows XP directory (maybe the upgraded to 7?):
-            else if (Directory.Exists(SaveGamePathLegacy) && File.Exists(SaveGamePathLegacy + "\\" + SaveFileName))
-            {
-                SaveNameAndPathToUse = SaveGamePathLegacy + "\\" + SaveFileName;
                 errorState = ErrorState.NoError;
             } // If it's none of those things, error. We cannot continue.
             else
             {
                 Console.Error.WriteLine("Error: Unable to find default Save File location.");
-                Console.Error.WriteLine("  Please enter a full file name and path for the 20XX save file as argument 1.");
+                Console.Error.WriteLine("  Please enter a full file name and path for the 20XX save file as argument[0]");
                 Console.Error.WriteLine("  You may drag-and-drop the desired save file onto this .exe for simplicity.");
                 errorState = ErrorState.NoSaveFileFound;
             }
@@ -161,7 +171,7 @@ namespace SaveMod20XX
         /// <param name="inputFileNameAndPath">Where's our save file?</param>
         /// <param name="settings">The loaded XML settings file</param>
         /// <returns>Windows completion code--0 is success, anything else is an error of some kind</returns>
-        private static ErrorState PerformSaveModification(string inputFileNameAndPath, Settings settings)
+        internal static ErrorState PerformSaveModification(string inputFileNameAndPath, Settings settings)
         {
             FileInfo fi = new FileInfo(inputFileNameAndPath);
             byte[] fileBytes = new byte[fi.Length];
@@ -186,14 +196,14 @@ namespace SaveMod20XX
         {
             List<Tuple<long, byte[]>> DataLores = new List<Tuple<long, byte[]>>();
 
-            DataLores.Add(new Tuple<long, byte[]>(settings.DataLoreByteOffsets.BasicAugments, 
-                                                  Settings.GetRawBytesFromBigInt(CongealItems(settings.BasicAugments))));
+            DataLores.Add(new Tuple<long, byte[]>(settings.DataLoreByteOffsets.BasicAugments,
+                                                  CongealItems(settings.BasicAugments, GetOriginalData(settings.DataLoreByteOffsets.BasicAugments, settings.DataSizes.BasicAugments, fileBytes))));
             DataLores.Add(new Tuple<long, byte[]>(settings.DataLoreByteOffsets.PrimaryWeapons,
-                                                  Settings.GetRawBytesFromBigInt(CongealItems(settings.PrimaryWeapons))));
+                                                  CongealItems(settings.PrimaryWeapons, GetOriginalData(settings.DataLoreByteOffsets.PrimaryWeapons, settings.DataSizes.PrimaryWeapons, fileBytes))));
             DataLores.Add(new Tuple<long, byte[]>(settings.DataLoreByteOffsets.CoreAugs,
-                                                  Settings.GetRawBytesFromBigInt(CongealItems(settings.CoreAugs))));
+                                                  CongealItems(settings.CoreAugs, GetOriginalData(settings.DataLoreByteOffsets.CoreAugs, settings.DataSizes.CoreAugs, fileBytes))));
             DataLores.Add(new Tuple<long, byte[]>(settings.DataLoreByteOffsets.Protoypes,
-                                                  Settings.GetRawBytesFromBigInt(CongealItems(settings.Prototypes))));
+                                                  CongealItems(settings.Prototypes, GetOriginalData(settings.DataLoreByteOffsets.Protoypes, settings.DataSizes.Protoypes, fileBytes))));
 
             DoAllModifications(fileBytes, DataLores);
         }
@@ -208,9 +218,9 @@ namespace SaveMod20XX
             List<Tuple<long, byte[]>> Unlocks = new List<Tuple<long, byte[]>>();
 
             Unlocks.Add(new Tuple<long, byte[]>(settings.UnlockByteOffsets.BasicAugments,
-                                                Settings.GetRawBytesFromBigInt(CongealItems(settings.BasicAugments))));
+                                                CongealItems(settings.BasicAugments, GetOriginalData(settings.UnlockByteOffsets.BasicAugments, settings.DataSizes.BasicAugments, fileBytes))));
             Unlocks.Add(new Tuple<long, byte[]>(settings.UnlockByteOffsets.PrimaryWeapons,
-                                                Settings.GetRawBytesFromBigInt(CongealItems(settings.PrimaryWeapons))));
+                                                CongealItems(settings.PrimaryWeapons, GetOriginalData(settings.UnlockByteOffsets.PrimaryWeapons, settings.DataSizes.PrimaryWeapons, fileBytes))));
 
             DoAllModifications(fileBytes, Unlocks);
         }
@@ -240,25 +250,43 @@ namespace SaveMod20XX
         }
 
         /// <summary>
+        /// Gets the data sub-array at the specified offset
+        /// </summary>
+        /// <param name="offset">Where in the file is this modification</param>
+        /// <param name="size">How much to copy out</param>
+        /// <param name="data">The contents of the save file</param>
+        public static byte[] GetOriginalData(long offset, long size, byte[] data)
+        {
+            byte[] subData = new byte[size];
+            Array.Copy(data, (long)offset, subData, (long)0, (long)subData.Length);
+            return subData;
+        }
+
+        /// <summary>
         /// Congeals all item bit-flags for a specific section of the output data
         /// </summary>
         /// <param name="itemsToCongeal">Here's the bit-flags and toggle-state of the items for this section</param>
+        /// <param name="originalData">The original data bytes</param>
         /// <returns>The combined bit-flags for this file section</returns>
-        private static BigInteger CongealItems(List<Item> itemsToCongeal)
+        private static byte[] CongealItems(IList<Item> itemsToCongeal, byte[] originalData)
         {
-            BigInteger allItems = 0;
+            BigInteger allItems = Settings.GetBigIntFromRawBytes(originalData);
             foreach (Item item in itemsToCongeal)
             {
-                if (item.Unlocked)
+                if (item.Availability == LockState.Unlocked)
                 {
                     allItems |= Settings.GetAsBigInt(item.HexValue);
                 }
-                else
+                else if (item.Availability == LockState.Locked)
                 {
                     allItems &= ~Settings.GetAsBigInt(item.HexValue);
                 }
+                else
+                {
+                    ; // do nothing, leave it as-is
+                }
             }
-            return allItems;
+            return Settings.GetRawBytesFromBigInt(allItems);
         }
 
         /// <summary>
