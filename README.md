@@ -1,4 +1,4 @@
-# Welcome to the SaveMod20XX wiki!
+# Welcome to the SaveMod20XX GitHub~!
 ## Version 3.0 is now available
 
 This application is able to modify the key portions of the 20XX save file to enable/disable items of your choosing to customize your game experience.
