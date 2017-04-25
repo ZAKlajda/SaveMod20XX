@@ -33,13 +33,20 @@ namespace SaveMod20XX
             Loaded += SaveModGUI_Loaded;
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
         private void SaveModGUI_Loaded(object sender, RoutedEventArgs e)
         {
             ItemGrid.Columns.Remove(ItemGrid.Columns.First((col) => col.Header.ToString() == "HexValue")); // Remove the HexValue column
-            List<Item> removeItems = AllItems.Where((item) => item.Name == "Unknown").ToList();
+            ItemGrid.Columns.Remove(ItemGrid.Columns.First((col) => col.Header.ToString() == "Lockable")); // Remove the HexValue column
+            List<Item> removeItems = AllItems.Where((item) => item.Name == String.Empty || item.Lockable == false).ToList();
             foreach (Item item in removeItems)
             {
-                AllItems.Remove(item); // <-- remove placeholders
+                AllItems.Remove(item); // <-- remove placeholders and non-lockable items
             }
         }
 
@@ -57,6 +64,11 @@ namespace SaveMod20XX
             ErrorState modificationStatus = PerformSaveModification(SaveNameAndPathToUse, SettingsFile);
 
             Console.WriteLine("    Modification completion code " + modificationStatus);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

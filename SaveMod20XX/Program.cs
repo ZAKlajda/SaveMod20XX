@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,26 +14,6 @@ namespace SaveMod20XX
 {
     partial class Program
     {
-        #region GUI
-        public static Application WinApp { get; private set; }
-        public static SaveModGUI MainWindow { get; private set; }
-
-        static void RunGui(Settings programSettings, string saveNameAndPathToUse)
-        {
-            WinApp = new Application();
-            MainWindow = new SaveModGUI();
-            foreach (Item item in programSettings.BasicAugments.Concat(programSettings.CoreAugs).Concat(programSettings.PrimaryWeapons).Concat(programSettings.Prototypes))
-            {
-                MainWindow.AllItems.Add(item);
-            }
-            MainWindow.SaveNameAndPathToUse = saveNameAndPathToUse;
-            MainWindow.SettingsFile = programSettings;
-            WinApp.Run(MainWindow); // note: blocking call
-        }
-        
-        #endregion GUI
-
-
         /// <summary>
         /// For decoding program return codes
         /// </summary>
@@ -91,13 +72,26 @@ namespace SaveMod20XX
         /// <returns>The settings file</returns>
         private static Settings LoadDefaultSettingsFile()
         {
-            if (File.Exists(SettingsFilePath) == false)
+            Settings programSettings = null;
+            do
             {
-                Settings defaultSettings = new Settings();
-                defaultSettings.SaveToFile(SettingsFilePath);
-                defaultSettings = null;
-            }
-            Settings programSettings = Settings.LoadFromFile(SettingsFilePath);
+                if (File.Exists(SettingsFilePath) == false)
+                {
+                    Settings defaultSettings = new Settings();
+                    defaultSettings.SaveToFile(SettingsFilePath);
+                    defaultSettings = null;
+                }
+                programSettings = Settings.LoadFromFile(SettingsFilePath);
+
+                Version oldVersion = new Version(programSettings.CreatedWithProgramVersion);
+                Version currentVersion = Assembly.GetCallingAssembly().GetName().Version;
+                if (oldVersion.Major != currentVersion.Major || oldVersion.Minor != currentVersion.Minor )
+                {
+                    programSettings = null;
+                    File.Move(SettingsFilePath, SettingsFilePath + BackupAppend);
+                    Console.WriteLine("Your settings file was out of date.\n  I have renamed it \"" + SettingsFilePath + BackupAppend + "' if you care to recover data from it.\n    It will be erased the next time you have an out of date settings file.");
+                }
+            } while (programSettings == null);
             return programSettings;
         }
 

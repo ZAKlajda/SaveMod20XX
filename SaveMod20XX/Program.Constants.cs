@@ -22,7 +22,7 @@ namespace SaveMod20XX
         const string BackupAppend = ".backup";
 
         /// <summary>
-        /// This is the location of the documents folder for Windows 7 onwards
+        /// This is the location of the documents folder for Windows
         /// </summary>
         static readonly string SaveGamePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\20XX";
         
