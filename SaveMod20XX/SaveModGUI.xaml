@@ -83,21 +83,21 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="-4,-4,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="-4,-4,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
         
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Foreground="{StaticResource MagentaBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="-3,-3,0,0" VerticalAlignment="Top" Foreground="{StaticResource MagentaBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Foreground="{StaticResource MagentaBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="-3,-3,0,0" VerticalAlignment="Top" Foreground="{StaticResource MagentaBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
         
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top" Foreground="{StaticResource MediumOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="-2,-2,0,0" VerticalAlignment="Top" Foreground="{StaticResource MediumOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top" Foreground="{StaticResource MediumOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="-2,-2,0,0" VerticalAlignment="Top" Foreground="{StaticResource MediumOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
         
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="3,3,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="-1,-1,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="3,3,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="-1,-1,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestOrangeBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
 
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
-        <Label Content="22XX Save Editor" HorizontalAlignment="Left" Margin="1,1,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestYellowBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Foreground="{StaticResource PurpleBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
+        <Label Content="20XX Save Editor" HorizontalAlignment="Left" Margin="1,1,0,0" VerticalAlignment="Top" Foreground="{StaticResource LightestYellowBrush}" FontFamily="Trebuchet MS" FontSize="22" FontStyle="Italic"/>
 
         <DataGrid Name="ItemGrid" 
                   DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
