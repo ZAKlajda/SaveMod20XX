@@ -84,11 +84,18 @@ namespace SaveMod20XX
                 programSettings = Settings.LoadFromFile(SettingsFilePath);
 
                 Version oldVersion = new Version(programSettings.CreatedWithProgramVersion);
+                
                 Version currentVersion = Assembly.GetCallingAssembly().GetName().Version;
                 if (oldVersion.Major != currentVersion.Major || oldVersion.Minor != currentVersion.Minor )
                 {
                     programSettings = null;
-                    File.Move(SettingsFilePath, SettingsFilePath + BackupAppend);
+
+                    // Find a unique save backup name -- no more overwriting old save files!
+                    int appendCounter = 0;
+                    while (File.Exists(SettingsFilePath + BackupAppend + appendCounter))
+                    { ++appendCounter; }
+
+                    File.Move(SettingsFilePath, SettingsFilePath + BackupAppend + appendCounter);
                     Console.WriteLine("Your settings file was out of date.\n  I have renamed it \"" + SettingsFilePath + BackupAppend + "' if you care to recover data from it.\n    It will be erased the next time you have an out of date settings file.");
                 }
             } while (programSettings == null);

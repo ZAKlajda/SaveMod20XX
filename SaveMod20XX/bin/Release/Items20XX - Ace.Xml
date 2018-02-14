@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--NOTE: The Items' Availability setting can be 'NoChange', 'Unlocked', or 'Locked'. NoChange will retain the existing value in the save file, if able.-->
+<SaveMod20XXSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CreatedWithProgramVersion>3.2.6599.35704</CreatedWithProgramVersion>
+  <UseGraphicalUserInterface>true</UseGraphicalUserInterface>
+  <UnlockByteOffsets BasicAugments="200" PrimaryWeapons="177" CoreAugs="-1" Protoypes="-1" />
+  <DataLoreByteOffsets BasicAugments="276" PrimaryWeapons="253" CoreAugs="298" Protoypes="292" />
+  <DataSizes BasicAugments="11" PrimaryWeapons="2" CoreAugs="3" Protoypes="2" />
+  <BasicAugments>
+    <Item HexValue="0x1000000000000000000000" Availability="Locked" Lockable="true" Name="PowerEnhancer" />
+    <Item HexValue="0x2000000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x4000000000000000000000" Availability="Unlocked" Lockable="true" Name="HeartContainer" />
+    <Item HexValue="0x8000000000000000000000" Availability="Locked" Lockable="true" Name="BlueLander" />
+    <Item HexValue="0x0100000000000000000000" Availability="Unlocked" Lockable="true" Name="PlumberHat" />
+    <Item HexValue="0x0200000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0400000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0800000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0010000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0020000000000000000000" Availability="Locked" Lockable="true" Name="ForcemetalShell" />
+    <Item HexValue="0x0040000000000000000000" Availability="Unlocked" Lockable="true" Name="XCalibur" />
+    <Item HexValue="0x0080000000000000000000" Availability="Unlocked" Lockable="true" Name="GlassCannon" />
+    <Item HexValue="0x0001000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0002000000000000000000" Availability="Unlocked" Lockable="true" Name="BrainFoodLunch" />
+    <Item HexValue="0x0004000000000000000000" Availability="Unlocked" Lockable="true" Name="Zephyr" />
+    <Item HexValue="0x0008000000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000100000000000000000" Availability="Unlocked" Lockable="true" Name="ScrapmetalScavenger" />
+    <Item HexValue="0x0000200000000000000000" Availability="Unlocked" Lockable="true" Name="SevenLeafClover" />
+    <Item HexValue="0x0000400000000000000000" Availability="Unlocked" Lockable="true" Name="SpilloverMatrix" />
+    <Item HexValue="0x0000800000000000000000" Availability="Unlocked" Lockable="true" Name="HealthNut" />
+    <Item HexValue="0x0000010000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000020000000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000040000000000000000" Availability="Locked" Lockable="true" Name="VitalityScavenger" />
+    <Item HexValue="0x0000080000000000000000" Availability="Locked" Lockable="true" Name="EnergyScavenger" />
+    <Item HexValue="0x0000001000000000000000" Availability="Unlocked" Lockable="true" Name="NutReplicator" />
+    <Item HexValue="0x0000002000000000000000" Availability="Unlocked" Lockable="true" Name="MinimechOGrinder" />
+    <Item HexValue="0x0000004000000000000000" Availability="Unlocked" Lockable="true" Name="Murderdrone" />
+    <Item HexValue="0x0000008000000000000000" Availability="Unlocked" Lockable="true" Name="SkitterySmuggler" />
+    <Item HexValue="0x0000000100000000000000" Availability="Unlocked" Lockable="true" Name="ChargedNuts" />
+    <Item HexValue="0x0000000200000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000400000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000800000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000010000000000000" Availability="Locked" Lockable="true" Name="Gapminder" />
+    <Item HexValue="0x0000000020000000000000" Availability="Locked" Lockable="true" Name="TheRebeginner" />
+    <Item HexValue="0x0000000040000000000000" Availability="Unlocked" Lockable="true" Name="ShockwaveSidekick" />
+    <Item HexValue="0x0000000080000000000000" Availability="Unlocked" Lockable="true" Name="Vendsmasher" />
+    <Item HexValue="0x0000000001000000000000" Availability="Locked" Lockable="true" Name="ShinierToken" />
+    <Item HexValue="0x0000000002000000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000004000000000000" Availability="Unlocked" Lockable="true" Name="ReFlapp" />
+    <Item HexValue="0x0000000008000000000000" Availability="Unlocked" Lockable="true" Name="TinyFlamespewer" />
+    <Item HexValue="0x0000000000100000000000" Availability="Locked" Lockable="true" Name="ArmorativePlating" />
+    <Item HexValue="0x0000000000200000000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000000400000000000" Availability="Unlocked" Lockable="true" Name="ThriftActuator" />
+    <Item HexValue="0x0000000000800000000000" Availability="Unlocked" Lockable="true" Name="CrisisOverdrive" />
+    <Item HexValue="0x0000000000010000000000" Availability="Unlocked" Lockable="true" Name="NutsavingStringwire" />
+    <Item HexValue="0x0000000000020000000000" Availability="Locked" Lockable="true" Name="ArmorNut" />
+    <Item HexValue="0x0000000000040000000000" Availability="Unlocked" Lockable="true" Name="RegenerativePlating" />
+    <Item HexValue="0x0000000000080000000000" Availability="Unlocked" Lockable="true" Name="EnerativePlating" />
+    <Item HexValue="0x0000000000001000000000" Availability="Locked" Lockable="true" Name="ArmorBloom" />
+    <Item HexValue="0x0000000000002000000000" Availability="Unlocked" Lockable="true" Name="Meganut" />
+    <Item HexValue="0x0000000000004000000000" Availability="Unlocked" Lockable="true" Name="PureFlame" />
+    <Item HexValue="0x0000000000008000000000" Availability="Locked" Lockable="true" Name="ForgottenMemento" />
+    <Item HexValue="0x0000000000000100000000" Availability="Locked" Lockable="true" Name="CrisisTimestopper" />
+    <Item HexValue="0x0000000000000200000000" Availability="Locked" Lockable="true" Name="SystemRestore" />
+    <Item HexValue="0x0000000000000400000000" Availability="Unlocked" Lockable="true" Name="ArmorSpreader" />
+    <Item HexValue="0x0000000000000800000000" Availability="Unlocked" Lockable="true" Name="Choicebooster" />
+    <Item HexValue="0x0000000000000010000000" Availability="Unlocked" Lockable="true" Name="Vibroreserve" />
+    <Item HexValue="0x0000000000000020000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000000000040000000" Availability="Unlocked" Lockable="true" Name="ArmorScavenger" />
+    <Item HexValue="0x0000000000000080000000" Availability="Unlocked" Lockable="true" Name="EntropyLock" />
+    <Item HexValue="0x0000000000000001000000" Availability="Unlocked" Lockable="true" Name="BracerofBattle" />
+    <Item HexValue="0x0000000000000002000000" Availability="Unlocked" Lockable="true" Name="Hypersash" />
+    <Item HexValue="0x0000000000000004000000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000000000008000000" Availability="Unlocked" Lockable="true" Name="Megaheart" />
+    <Item HexValue="0x0000000000000000100000" Availability="Unlocked" Lockable="true" Name="TheVolunteer" />
+    <Item HexValue="0x0000000000000000200000" Availability="Unlocked" Lockable="true" Name="Thrillseeker" />
+    <Item HexValue="0x0000000000000000400000" Availability="Unlocked" Lockable="true" Name="QuantumSpook" />
+    <Item HexValue="0x0000000000000000800000" Availability="Unlocked" Lockable="true" Name="HoardersMight" />
+    <Item HexValue="0x0000000000000000010000" Availability="Locked" Lockable="true" Name="StrikingFeather" />
+    <Item HexValue="0x0000000000000000020000" Availability="Locked" Lockable="true" Name="ThunderousBoon" />
+    <Item HexValue="0x0000000000000000040000" Availability="Unlocked" Lockable="true" Name="BandofMight" />
+    <Item HexValue="0x0000000000000000080000" Availability="Unlocked" Lockable="true" Name="MistimedProtector" />
+    <Item HexValue="0x0000000000000000001000" Availability="Unlocked" Lockable="true" Name="WorldSlug" />
+    <Item HexValue="0x0000000000000000002000" Availability="Unlocked" Lockable="true" Name="LeafmetalPlating" />
+    <Item HexValue="0x0000000000000000004000" Availability="Locked" Lockable="true" Name="ZookeepersSigil" />
+    <Item HexValue="0x0000000000000000008000" Availability="NoChange" Lockable="true" Name="" />
+    <Item HexValue="0x0000000000000000000100" Availability="Unlocked" Lockable="true" Name="ContractorPlus" />
+    <Item HexValue="0x0000000000000000000200" Availability="Unlocked" Lockable="true" Name="ContractorOmega" />
+    <Item HexValue="0x0000000000000000000400" Availability="Unlocked" Lockable="true" Name="MixmatchMastery" />
+    <Item HexValue="0x0000000000000000000800" Availability="Unlocked" Lockable="true" Name="ChargingMagnet" />
+    <Item HexValue="0x0000000000000000000010" Availability="Unlocked" Lockable="true" Name="Vitaboost" />
+    <Item HexValue="0x0000000000000000000020" Availability="Unlocked" Lockable="true" Name="ThornedHull" />
+    <Item HexValue="0x0000000000000000000040" Availability="Locked" Lockable="true" Name="JuicedReserves" />
+    <Item HexValue="0x0000000000000000000001" Availability="Unlocked" Lockable="true" Name="StaticClicklets" />
+    <Item HexValue="0x0000000000000000000002" Availability="Locked" Lockable="true" Name="FortuneStabilizer" />
+    <Item HexValue="0x0000000000000000000004" Availability="Unlocked" Lockable="true" Name="SpicyIncense" />
+    <Item HexValue="0x0000000000000000000008" Availability="Locked" Lockable="true" Name="PatchworkConnector" />
+  </BasicAugments>
+  <PrimaryWeapons>
+    <Item HexValue="0x1000" Availability="Locked" Lockable="true" Name="WaveBeam" />
+    <Item HexValue="0x2000" Availability="Unlocked" Lockable="true" Name="Scatterblast" />
+    <Item HexValue="0x0200" Availability="Unlocked" Lockable="false" Name="NBuster" />
+    <Item HexValue="0x0400" Availability="NoChange" Lockable="false" Name="StarBeam" />
+    <Item HexValue="0x0800" Availability="NoChange" Lockable="false" Name="TheForkalator" />
+    <Item HexValue="0x0010" Availability="Locked" Lockable="true" Name="SpinningGlaive" />
+    <Item HexValue="0x0020" Availability="NoChange" Lockable="false" Name="SharpSharpSpear" />
+    <Item HexValue="0x0002" Availability="Unlocked" Lockable="false" Name="ASaber" />
+    <Item HexValue="0x0004" Availability="Locked" Lockable="true" Name="RipplingAxe" />
+    <Item HexValue="0x0008" Availability="NoChange" Lockable="false" Name="PlasmaBlender" />
+  </PrimaryWeapons>
+  <CoreAugs>
+    <Item HexValue="0x100000" Availability="NoChange" Lockable="false" Name="ArmatortsShell" />
+    <Item HexValue="0x300000" Availability="NoChange" Lockable="false" Name="OxjacksGuile" />
+    <Item HexValue="0x400000" Availability="NoChange" Lockable="false" Name="DracopentsPride" />
+    <Item HexValue="0x800000" Availability="NoChange" Lockable="false" Name="OwlhawksReign" />
+    <Item HexValue="0x001000" Availability="NoChange" Lockable="false" Name="ArmatortsMomentum" />
+    <Item HexValue="0x002000" Availability="NoChange" Lockable="false" Name="OxjacksBlitz" />
+    <Item HexValue="0x004000" Availability="NoChange" Lockable="false" Name="DracopentsBound" />
+    <Item HexValue="0x008000" Availability="NoChange" Lockable="false" Name="OwlhawksFeather" />
+    <Item HexValue="0x000100" Availability="NoChange" Lockable="false" Name="ArmatortsDome" />
+    <Item HexValue="0x000200" Availability="NoChange" Lockable="false" Name="OxjacksKen" />
+    <Item HexValue="0x000400" Availability="NoChange" Lockable="false" Name="DracopentsFang" />
+    <Item HexValue="0x000800" Availability="NoChange" Lockable="false" Name="OwlhawksFocus" />
+    <Item HexValue="0x000001" Availability="NoChange" Lockable="false" Name="ArmatortsPound" />
+    <Item HexValue="0x000002" Availability="NoChange" Lockable="false" Name="OxjacksFury" />
+    <Item HexValue="0x000004" Availability="NoChange" Lockable="false" Name="DracopentsClaw" />
+    <Item HexValue="0x000008" Availability="NoChange" Lockable="false" Name="OwlhawksTalon" />
+  </CoreAugs>
+  <Prototypes>
+    <Item HexValue="0x1000" Availability="NoChange" Lockable="false" Name="BrutishAugmentation" />
+    <Item HexValue="0x2000" Availability="NoChange" Lockable="false" Name="FocusingSagelens" />
+    <Item HexValue="0x4000" Availability="NoChange" Lockable="false" Name="EarthmetalPlating" />
+    <Item HexValue="0x8000" Availability="NoChange" Lockable="false" Name="InterestingTimes" />
+    <Item HexValue="0x0200" Availability="NoChange" Lockable="false" Name="SanityConverter" />
+    <Item HexValue="0x0400" Availability="NoChange" Lockable="false" Name="ViolenceEnhancer" />
+    <Item HexValue="0x0800" Availability="NoChange" Lockable="false" Name="DefiantDecree" />
+    <Item HexValue="0x0001" Availability="NoChange" Lockable="false" Name="UnchargingForce" />
+    <Item HexValue="0x0002" Availability="NoChange" Lockable="false" Name="FinalShell" />
+    <Item HexValue="0x0004" Availability="NoChange" Lockable="false" Name="ZookeepersSigil" />
+    <Item HexValue="0x0008" Availability="NoChange" Lockable="false" Name="ConsumingFury" />
+  </Prototypes>
+</SaveMod20XXSettings>
