@@ -1,0 +1,12 @@
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\bin\Debug\SaveMod20XX.exe.config
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\bin\Debug\SaveMod20XX.exe
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\bin\Debug\SaveMod20XX.pdb
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX.csprojResolveAssemblyReference.cache
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveModGUI.g.cs
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX_MarkupCompile.cache
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX_MarkupCompile.lref
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveModGUI.baml
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX.g.resources
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX.csproj.CoreCompileInputs.cache
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX.exe
+F:\Bryant\Documents\Development\SaveMod20XX\SaveMod20XX\obj\Debug\SaveMod20XX.pdb
